@@ -1,0 +1,77 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Manifest Merging:
+-----------------
+Your project uses libraries that provide manifests, and your Eclipse
+project did not explicitly turn on manifest merging. In Android Gradle
+projects, manifests are always merged (meaning that contents from your
+libraries' manifests will be merged into the app manifest. If you had
+manually copied contents from library manifests into your app manifest
+you may need to remove these for the app to build correctly.
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+From VRSamples:
+* .DS_Store
+* proguard-unity.txt
+From gvr_android_common:
+* R.txt
+From unitygvractivity:
+* R.txt
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+In gvr_android_common:
+* AndroidManifest.xml => gvr_android_common/src/main/AndroidManifest.xml
+* libs/classes.jar => gvr_android_common/libs/classes.jar
+* res/ => gvr_android_common/src/main/res/
+* src/ => gvr_android_common/src/main/java
+In unitygvractivity:
+* AndroidManifest.xml => unitygvractivity/src/main/AndroidManifest.xml
+* libs/classes.jar => unitygvractivity/libs/classes.jar
+* res/ => unitygvractivity/src/main/res
+* src/ => unitygvractivity/src/main/java
+In VRSamples:
+* AndroidManifest.xml => vRSamples/src/main/AndroidManifest.xml
+* assets/ => vRSamples/src/main/assets/
+* libs/armeabi-v7a/libaudioplugingvrunity.so => vRSamples/src/main/jniLibs/armeabi-v7a/libaudioplugingvrunity.so
+* libs/armeabi-v7a/libgvrunity.so => vRSamples/src/main/jniLibs/armeabi-v7a/libgvrunity.so
+* libs/armeabi-v7a/libmain.so => vRSamples/src/main/jniLibs/armeabi-v7a/libmain.so
+* libs/armeabi-v7a/libmono.so => vRSamples/src/main/jniLibs/armeabi-v7a/libmono.so
+* libs/armeabi-v7a/libunity.so => vRSamples/src/main/jniLibs/armeabi-v7a/libunity.so
+* libs/gvr_audio.jar => vRSamples/libs/gvr_audio.jar
+* libs/unity-classes.jar => vRSamples/libs/unity-classes.jar
+* libs/x86/libaudioplugingvrunity.so => vRSamples/src/main/jniLibs/x86/libaudioplugingvrunity.so
+* libs/x86/libgvrunity.so => vRSamples/src/main/jniLibs/x86/libgvrunity.so
+* libs/x86/libmain.so => vRSamples/src/main/jniLibs/x86/libmain.so
+* libs/x86/libmono.so => vRSamples/src/main/jniLibs/x86/libmono.so
+* libs/x86/libunity.so => vRSamples/src/main/jniLibs/x86/libunity.so
+* res/ => vRSamples/src/main/res/
+* src/ => vRSamples/src/main/java/
+* src/.DS_Store => vRSamples/src/main/resources/.DS_Store
+* src/com/.DS_Store => vRSamples/src/main/resources/com/.DS_Store
+* src/com/unity3d/.DS_Store => vRSamples/src/main/resources/com/unity3d/.DS_Store
+* src/com/unity3d/vrstandardassets/.DS_Store => vRSamples/src/main/resources/com/unity3d/vrstandardassets/.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

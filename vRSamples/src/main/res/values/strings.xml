@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">VRSamples</string>
+  <string name="app_vr_content">
+        \t\tAPP 嵌套Unity问题:\n
+        \t\tQ1:Failed to initialize your hardware dose not support this applicatio\n
+            \t\t如果有初始化失败的问题,注意可能是否缺少对应的x86或者armeabi-v7a的so文件\n
+        \t\tQ2:java.lang.ClassNotFoundException: com.google.vr.platform.unity.UnityVrActivityListener\n
+            \t\t如果有找不到UnityVrActivityListener这类似问题，是因为从unity生产的依赖项目缺少文件，删除后手动从Unity项目导入aar\n
+            \t\tFile -> New Module -> Import Jar/Aar,选择 Assets/Plugins/gvr_android_common.aar,unitygvractivity.aar\n
+            "</string>
+</resources>
